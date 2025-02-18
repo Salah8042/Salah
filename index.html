@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <title>KING Number 1</title>
+  <link rel="stylesheet" href="styles.css">
+  <script>
+    function checkPassword() {
+      var password = document.getElementById("password").value;
+      var errorMessage = document.getElementById("error-message");
+      if (password === "11") {
+        window.location.href = "dash/dashbord.html";
+      } else {
+        errorMessage.style.display = "block"; // Show error message
+        errorMessage.innerText = "Error: Incorrect password";
+      }
+    }
+
+    // JavaScript function to open Telegram link
+    function openTelegram() {
+      window.open("https://t.me/salahmarge2", "_blank");
+    }
+  </script>
+</head>
+<body>
+  <div class="container">
+    <div class="background">
+      <img src="image/helmet.jpg">
+    </div>
+    <div class="content">
+      <h1 class="team-name">El KING Salah</h1>
+      <div id="error-message" class="error-message"></div> <!-- Error message above -->
+      <div class="password-section">
+        <input type="password" id="password" placeholder="PASSWORD">
+        <div class="line"></div>
+      </div>
+      <button class="btn-continue" onclick="checkPassword()">Continue!</button>
+      <button class="btn-get-password">get password</button>
+      <p class="footer">BY Salah Eldien • Hacker👿</p>
+      <div class="telegram">
+        <!-- Image with onclick to open Telegram link -->
+        <img src="image/Telegram.png" alt="Telegram Icon" onclick="openTelegram()" />
+      </div>
+    </div>
+  </div>
+</body>
+</html>

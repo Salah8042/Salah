@@ -1,0 +1,181 @@
+/* General styles */
+html, body {
+  margin: 0;
+  padding: 0;
+  height: 100%; /* تأكيد على أن html و body سيغطيان كامل الشاشة */
+  overflow: hidden; /* تعطيل التمرير */
+  -webkit-tap-highlight-color: transparent; /* تعطيل تأثير Tap Highlight في Chrome */
+}
+
+/* تحسين تجربة اللمس */
+button, a, input, .btn-continue, .btn-get-password {
+  -webkit-tap-highlight-color: transparent; /* تعطيل Tap Highlight عند الضغط */
+  touch-action: manipulation; /* تحسين تجربة اللمس */
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  color: white;
+  text-align: center;
+  background-color: black;
+}
+
+.container {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden; /* تعطيل التمرير داخل الـ container */
+}
+
+.background img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+}
+
+/* Content styles */
+.content {
+  position: relative;
+  top: 45%;
+  transform: translateY(-50%);
+}
+
+.team-name {
+  font-size: 1.7rem;
+  letter-spacing: 2px;
+  margin-bottom: 20px;
+}
+
+.password-section {
+  font-size: 1.1rem;
+  display: inline-block;
+  text-align: center;
+  position: relative;
+  margin-bottom: 15px;
+}
+
+.password-section .line {
+  width: 135px;
+  height: 2px;
+  background-color: gold;
+  margin: 10px auto 0;
+}
+
+.password-section input {
+  font-size: 18px;
+  font-family: 'Arial', sans-serif;
+  text-align: center;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: inherit;
+  width: 200px;
+  padding: 5px 0;
+}
+
+/* إزالة الخط أسفل الحقل عند التركيز */
+.password-section input:focus {
+  border: none; /* إزالة الخط */
+}
+
+.password-section input::placeholder {
+  color: inherit;
+  text-align: center;
+}
+
+/* تحسين ألوان الأزرار */
+.btn-continue, 
+.btn-get-password {
+  display: block;
+  margin: 20px auto;
+  padding: 7px 4px;
+  font-size: 1.0rem;
+  border: none;
+  border-radius: 20px; /* زيادة قيمة border-radius لجعل الزوايا أكثر استدارة */
+  cursor: pointer;
+  text-transform: uppercase;
+  transition: all 0.3s ease-in-out; /* تأثيرات سلسة */
+}
+
+/* Disable text selection on buttons */
+button, img {
+  user-select: none; /* تعطيل النسخ */
+}
+
+/* زر استمرار (Continue) */
+.btn-continue {
+  background: linear-gradient(145deg, #6c757d, #f39c12); /* تدرج بين الرمادي والذهبي */
+  color: white;
+  border: 2px solid #f39c12; /* إطار ذهبي دافئ */
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.2); /* ظل ناعم */
+}
+
+.btn-continue:hover {
+  background: linear-gradient(145deg, #495057, #f1c40f); /* تفتيح التدرج */
+  border-color: #f1c40f; /* تفتيح الإطار الذهبي */
+  box-shadow: 0px 8px 20px rgba(0, 0, 0, 0.3); /* ظل أعمق */
+}
+
+.btn-continue:active {
+  background-color: #333333; /* غامق أكثر */
+  transform: scale(0.95); /* انكماش خفيف */
+  box-shadow: 0px 6px 18px rgba(0, 0, 0, 0.4); /* تأثير ظل عند الضغط */
+}
+
+/* زر الحصول على كلمة المرور (Get Password) */
+.btn-get-password {
+  background: linear-gradient(45deg, #00c6ff, #0072ff); /* تدرج بين الأزرق والتركوازي */
+  color: white;
+  border: 2px solid #00c6ff;
+  box-shadow: 0px 4px 12px rgba(0, 198, 255, 0.3); /* ظل ناعم مع تدرج الأزرق */
+}
+
+.btn-get-password:hover {
+  background: linear-gradient(45deg, #00b3e6, #005ecb); /* تفتيح التدرج الأزرق */
+  border-color: #00b3e6;
+  box-shadow: 0px 8px 20px rgba(0, 183, 230, 0.4); /* ظل أعمق */
+}
+
+.btn-get-password:active {
+  background: linear-gradient(45deg, #00a3d1, #004bb7); /* تدرج أغمق عند الضغط */
+  transform: scale(0.95); /* انكماش خفيف */
+  box-shadow: 0px 6px 18px rgba(0, 159, 210, 0.5); /* تأثير ظل عند الضغط */
+}
+
+/* Enable text selection in password input */
+input[type="password"] {
+  user-select: text; /* تمكين النسخ فقط لحقل الإدخال */
+}
+
+/* Disable text selection on footer text */
+.footer {
+  margin-top: 25px;
+  font-size: 1.3rem;
+  color: #f39c12;
+  user-select: none; /* تعطيل النسخ على النص */
+}
+
+.telegram img {
+  margin-top: 20px;
+  width: 60px;
+  height: 60px;
+}
+
+/* Error message styles */
+.error-message {
+  color: red;
+  margin-bottom: 10px;
+  display: none;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* منع القائمة المنبثقة عند الضغط المطول */
+button, img, a {
+  -webkit-user-select: none; /* تعطيل تحديد النص عند الضغط المطول */
+  user-select: none; /* تعطيل تحديد النص */
+}
